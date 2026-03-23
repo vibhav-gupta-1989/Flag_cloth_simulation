@@ -21,8 +21,8 @@
 
 // Globals.
 static float s = 0.0; // Amount of shift of the piece of the sine curve.
-static int p = 1000; // Number of segments along the  length (i.e., sine curve section) of the flag.
-static int q = 1000; // Number of segments along the width of the flag.
+static int p = 500; // Number of segments along the  length (i.e., sine curve section) of the flag.
+static int q = 500; // Number of segments along the width of the flag.
 static float *vertices = NULL; // Vertex array containing vertices on the flag.
 static float Xangle = 60.0, Yangle = 0.0, Zangle = 0.0; // Angles to rotate scene.
 static int isAnimate = 0; // Animated?
@@ -168,7 +168,7 @@ void setup(void)
 			int idx = j * (p + 1) + i;
 
 			texCoords[2 * idx + 0] = (float)i / p; // u
-			texCoords[2 * idx + 1] = (float)j / q; // v
+			texCoords[2 * idx + 1] = 1 - (float)j / q; // v
 		}
 	}
 

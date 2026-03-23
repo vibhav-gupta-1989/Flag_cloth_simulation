@@ -17,8 +17,8 @@ float* texCoords;
 
 // Globals
 static float s = 0.0;
-static int p = 1000;
-static int q = 1000;
+static int p = 500;
+static int q = 500;
 
 #define M_PI 3.142
 
@@ -232,7 +232,7 @@ void setup(void)
             int idx = j * (p + 1) + i;
 
             texCoords[2 * idx + 0] = (float)i / p; // u
-            texCoords[2 * idx + 1] = (float)j / q; // v
+            texCoords[2 * idx + 1] = 1.0 - (float)j / q; // v
         }
     }
     glEnable(GL_TEXTURE_2D);
